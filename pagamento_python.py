@@ -1,7 +1,7 @@
-bit=int(input('Digite o bit de verificação:'))
 cn='Compra negada'
 cs='Compra concluida com sucesso'
 
+bit=int(input('Digite o bit de verificação:'))
 if bit==0 :
     valor=int(input('Digite o valor da compra: '))
     if valor<=1000 :
