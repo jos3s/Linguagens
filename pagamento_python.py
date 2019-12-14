@@ -7,7 +7,6 @@ if bit==0 :
     if valor<=1000 :
         cartao=input('Digite o numero do cartão: ')
         tam=len(cartao)
-        print(tam)
         if tam==16:
             senha=int(input('Digite a senha do cartão: '))
             print('\n')
