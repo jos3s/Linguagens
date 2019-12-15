@@ -7,7 +7,7 @@ if bit==0 :
     if valor<=1000 :
         cartao=input('Digite o numero do cartão: ')
         tam=len(cartao)
-        if tam==16:
+        if tam==16 and cartao.isdigit()==True :
             senha=int(input('Digite a senha do cartão: '))
             print('\n')
             print('O valor da compra foi {}'.format(valor))
