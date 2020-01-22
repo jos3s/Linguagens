@@ -10,3 +10,4 @@
 .history
 
 *.exe
+.vscode/settings.json
