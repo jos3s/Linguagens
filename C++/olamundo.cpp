@@ -6,5 +6,4 @@ int main(){
     cout<<"Hello word";
     system("pause");
     return 0;
-
-}P
+}
