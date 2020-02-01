@@ -41,28 +41,33 @@ void adicionar(int valor, int pos){
 }
 
 int remover(int pos){
+    int retorno;
     if(pos>=0 && pos<=tam){
         NO*lixo;
         NO*aux=inicio;
         int i;
         if(pos==0){
             lixo=inicio;
+            retorno=lixo->valor;
             inicio=inicio->prox;
         }else if(pos==tam-1){
             for(i=0;i<tam-2;i++)
                 aux=aux->prox;
             lixo=fim;
+            retorno=lixo->valor;
             aux->prox=NULL;
             fim=aux;
         }else{
             for(i=0;i<pos-1;i++)
                 aux=aux->prox;
             lixo=aux->prox;
+            retorno=lixo->valor;
             aux->prox=aux->prox->prox;
         }
+        tam--;
         free(lixo);
+        return retorno;
     }
-    tam--;
 }
 
 void imprimir(){
@@ -72,21 +77,21 @@ void imprimir(){
         printf("%d ", aux->valor);
         aux=aux->prox;
     }
-
 }
 
 void inserir(){
     int valor,pos;
-    printf("Digite um valor e a posção:");
+    printf("Digite um valor e a posição:");
     scanf("%d %d", &valor, &pos);
     adicionar(valor,pos);
 }
 
 void excluir(){
-    int pos;
+    int pos, lixo;
     printf("Digite uma posição para remover:");
     scanf("%d", &pos);
-    remover(pos);
+    lixo=remover(pos);
+    printf("O valor excluido foi: %d\n", lixo);
 }
 
 int main(){
