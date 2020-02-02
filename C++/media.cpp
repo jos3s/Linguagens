@@ -30,14 +30,15 @@ void salvar(ALUNO & aluno){
     ofstream arquivo;
     arquivo.open("mediaAlunos.txt", ios::app);
 
-    arquivo<<"\nNome: "<<aluno.nome;
-    arquivo<<"Nota 1:"<< aluno.nota[0];
-    arquivo<<"Nota 2:"<< aluno.nota[1];
-    arquivo<<"Nota 3:"<< aluno.nota[2];
-    arquivo<<"Média: "<<aluno.media;
+    arquivo<<"\nNome: "<<aluno.nome<<endl;
+    arquivo<<"Nota 1:"<< aluno.nota[0]<<endl;
+    arquivo<<"Nota 2:"<< aluno.nota[1]<<endl;
+    arquivo<<"Nota 3:"<< aluno.nota[2]<<endl;
+    arquivo<<"Média: "<<aluno.media<<endl;
     
     arquivo.close();
 }
+
 int main(){
 
     ALUNO alunos[2];
@@ -53,7 +54,7 @@ int main(){
     }
     i=0;
     while(i<2){
-        salvar(alunos[a]);
+        salvar(alunos[i]);
         i++;
     }
         system("pause");

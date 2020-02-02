@@ -8,6 +8,6 @@
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
-
 *.exe
+*.txt
 .vscode/settings.json
