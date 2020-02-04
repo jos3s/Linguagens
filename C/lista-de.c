@@ -77,8 +77,8 @@ int remover(int pos){
             aux->prox->ant=aux->ant;
         }
         free(lixo);
-        return retorno;
         tam--;
+        return retorno;
     }
 }
 
