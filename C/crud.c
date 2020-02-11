@@ -77,9 +77,8 @@ void editar(){
 }
 
 void menu(){
-    int loop=1;
     int op;
-    while (loop==1){
+    while (1){
         puts("============================");
         printf("1-Adicionar\n2-Imprimir\n3-Excluir\n4-Editar\n5-Encerrar");
         printf("\nDigite a opção desejada: ");
