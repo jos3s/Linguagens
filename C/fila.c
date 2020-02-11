@@ -35,6 +35,7 @@ int remover(){
     int lixo=inicio->valor;
     inicio=inicio->prox;
     free(aux);
+    tam--;
     return lixo;
 }
 
