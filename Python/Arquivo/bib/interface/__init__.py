@@ -13,7 +13,7 @@ def leiaInt(msg):
     
     
 def linha():
-    print('~'*20)
+    print('-'*20)
 
 def texto(msg):
     linha()
