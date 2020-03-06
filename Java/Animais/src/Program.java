@@ -2,10 +2,10 @@ public class Program {
 
 	public static void main(String[] args) {
 		//Animal an=new Animal();
-		Mamifero m=new Mamifero();
-		Reptil r=new Reptil();
-		Peixe p=new Peixe();
-		Ave a=new Ave();
+		//Mamifero m=new Mamifero();
+		//Reptil r=new Reptil();
+		//Peixe p=new Peixe();
+		//Ave a=new Ave();
 		
 		Canguru c=new Canguru();
 		c.locomover();
@@ -15,7 +15,7 @@ public class Program {
 		t.locomover();
 		
 		Lobo l=new Lobo();
-		l.emitirSom();
+		l.emitirSom(); 
 		Cachorro ca=new Cachorro();
 		ca.emitirSom();
 		ca.reagir(true);
