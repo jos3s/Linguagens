@@ -7,6 +7,8 @@ Um repositório de testes e experimentos para o meu apredizado em novas linguage
   - Códigos simples, que experimentei com base em pesquisas e vídeos pela internet.
 - ![#F6BC0A](https://placehold.it/15/F6BC0A/000000?text=+) `Python`
   - Uma variedade de exerimentos pessoais e de atividades propostas no Curso de Pyhton 3 do canal [Curso em Video](https://www.youtube.com/channel/UCrWvhVmt0Qac3HgsjQK62FQ)
+- ![#D5082D](https://placehold.it/15/D5082D/000000?text=+) `Java`
+  - Códigos aleatórios do curso de Java na Udemy e de aulas soltas no YouTube. 
 
 
 [![time tracker](https://wakatime.com/badge/github/jos3s/Linguagens.svg)](https://wakatime.com/badge/github/jos3s/Linguagens)

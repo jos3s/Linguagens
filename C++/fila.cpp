@@ -1,8 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <locale.h>
-#include <math.h>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
 
 typedef struct no{
     int valor;
@@ -30,49 +28,42 @@ void adicionar(int valor){
     tam++;
 }
 
+void imprimir(){
+    NO*aux=inicio;
+    for(int i=0;i<tam;i++){
+        if(i<tam-1){
+            cout<<aux->valor<<" -> ";
+        }else{
+            cout<<aux->valor;
+        }
+        aux=aux->prox;
+    }
+    cout<<endl;
+}
+
+void inserir(){
+    int valor;
+    cout<<"Digite um valor:"<<endl;
+    cin>>valor;
+    adicionar(valor);
+    
+}
+
 int remover(){
     NO*aux=inicio;
     int lixo=inicio->valor;
     inicio=inicio->prox;
     free(aux);
-    tam--;
     return lixo;
 }
 
-void imprimir(){
-    NO*aux=inicio;
-    int i;
-    for(i=0;i<tam;i++){
-        printf("%d ", aux->valor);
-        aux=aux->prox;
-    }
-}
-
-void inserir(){
-    int valor;
-
-    printf("Digite um valor:");
-    scanf(" %d", &valor);
-
-    adicionar(valor);
-}
-
-void excluir(){
-    int lixo;
-    lixo=remover();
-    printf("\nO valor excluido foi: %d\n", lixo);
-}
-
 int main(){
-
     int i=0;
     while(i<5){
         inserir();
         i++;
     }
     imprimir();
-    excluir();
-    imprimir();
-
+    system("pause");
     return 0;
 }
