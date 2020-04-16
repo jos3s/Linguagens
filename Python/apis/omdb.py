@@ -1,4 +1,15 @@
 import requests, json
+from textblob import TextBlob
+from time import sleep
+
+cores={
+    'padrao':'\033[m',
+    'azul':'\033[34m',
+    'verde':'\033[32m',
+    'verm':'\033[31m',
+    'amar':'\033[33m',
+    'magenta':'\033[35m',
+}
 
 def buscar(titulo, tipo=None):
     req=None
@@ -12,7 +23,7 @@ def buscar(titulo, tipo=None):
 
 def imprimir(filme):
     print()
-    print(f"Titulo: {filme['Title']}")
+    print(f"{cores['amar']}Titulo: {filme['Title']} {cores['padrao']}")
     print(f"Ano: {filme['Year']}")
     print(f"Duração: {filme['Runtime']}")
     print(f"Linguagem: {filme['Language']}")
@@ -22,18 +33,31 @@ def imprimir(filme):
     print(f"Atores: {filme['Actors']}")
     print(f"Nota IMDB: {filme['imdbRating']}")
     print(f"Premios: {filme['Awards']}")
-    op=input('Deseja ver o plot do filme? [Y/N] ')
+    print()
+    op=input(f'Deseja ver o plot do filme? [Y/N] ')
     if op in 'Yy':
-        print(f"Plot: {filme['Plot']}")
-    op=input('Deseja ver as notas do filme? [Y/N] ')
+        print(f"{cores['verde']}Plot: {filme['Plot']}{cores['padrao']}")
+        op=input('Deseja traduzir o plot do filme? [Y/N] ')
+        if op in 'Yy':
+            original=TextBlob(filme['Plot'])
+            original.detect_language()
+            sleep(.2)
+            print(f'Tradução: ')
+            print(f'{cores["verde"]}{original.translate(to="pt_br")} {cores["padrao"]}')
+    print()
+    op=input(f'Deseja ver as notas do filme? [Y/N] ')
     if op in 'Yy':
+        print(cores["magenta"], end='')
         for s in filme['Ratings']:
-             print(f"{s['Source']}: {s['Value']}")
-                   
+            print(f"{s['Source']}: {s['Value']}")
+        print(cores['padrao'])
+
 while True:
-    op=input("\nDigite o nome do filme ou SAIR para encerrar: ").upper()
+    op=input(f"{cores['azul']}Digite o nome do filme ou SAIR para encerrar: {cores['padrao']} ").upper()
     if op in 'SAIR':
-        print(f'Saindo...')
+        print()
+        print(f'{cores["verm"]}Saindo...{cores["padrao"]}')
+        print()
         break
     else:
         tipo=int(input("Você deseja buscar sobre o que?\n1 Movie(Valor padrão) \n2 Series \n3 Episode\nSua escolha: "))
@@ -41,9 +65,10 @@ while True:
             filme=buscar(op, "series")
         elif tipo==3:
             filme=buscar(op, "episode")
-        else:
+        elif tipo==1:
             filme=buscar(op)
-
+        else:
+            print('Opção inválida')
         if filme['Response']=='False':
             print('Não encontrado')
         else:
